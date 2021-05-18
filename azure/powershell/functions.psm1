@@ -35,7 +35,7 @@ function get_rgs {
 }
 
 function get_regions {
-    $region_json=az account list-locations | json_pp
+    $region_json=az account list-locations --query "[?metadata.regionType=='Physical']" | json_pp
     $regions = $region_json | ConvertFrom-Json
     return $regions
 }
