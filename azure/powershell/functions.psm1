@@ -16,6 +16,15 @@ function get_vnets {
     return $vnets
 }
 
+function get_subnets {
+    param (
+        $vnetName, $resourceGroup
+    )
+    $subnet_json=az network vnet subnet list --resource-group $resourceGroup --vnet-name $vnetName | json_pp
+    $subnets = $subnet_json | ConvertFrom-Json
+    return $subnets
+}
+
 function get_nics {
     param (
         $location
