@@ -48,3 +48,42 @@ function get_regions {
     $regions = $region_json | ConvertFrom-Json
     return $regions
 }
+
+
+## Handy get selection from user function
+## Hat tip: https://jpearson.blog/2019/11/08/prompting-the-user-for-input-with-powershell/
+
+function Get-SelectionFromUser {
+    param (
+        [Parameter(Mandatory=$true)]
+        [string[]]$Options,
+        [Parameter(Mandatory=$true)]
+        [string]$Prompt        
+    )
+    
+    [int]$Response = 0;
+    [bool]$ValidResponse = $false    
+
+    while (!($ValidResponse)) {            
+        [int]$OptionNo = 0
+
+        Write-Host $Prompt -ForegroundColor DarkYellow
+        Write-Host "[0]: Cancel"
+
+        foreach ($Option in $Options) {
+            $OptionNo += 1
+            Write-Host ("[$OptionNo]: {0}" -f $Option)
+        }
+
+        if ([Int]::TryParse((Read-Host), [ref]$Response)) {
+            if ($Response -eq 0) {
+                return ''
+            }
+            elseif($Response -le $OptionNo) {
+                $ValidResponse = $true
+            }
+        }
+    }
+
+    return $Options.Get($Response - 1)
+} 
