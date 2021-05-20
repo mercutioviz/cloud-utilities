@@ -30,6 +30,8 @@ if ( $noninteractive -eq $true ) {
     $nogreeting = $true
 }
 # Welcome message
+clear
+
 if ( $nogreeting -eq $false ) {
     Write-Host "Welcome to the Barracuda WAF and CGF deployment script for Azure."
     Write-Host "This script will assist with deploying WAF or CGF into an Azure environment."
@@ -117,9 +119,9 @@ if ( $noninteractive -eq $false ) {
 Write-Host "HA Deployment: " $ha -ForegroundColor Green
 
 Write-Host "Gathering information about your Azure environment..."
-$vnets = get_vnets
-$rg_list = get_rg_list
-$nics = get_nics
+$vnets = get_vnets $location
+$rg_list = get_rg_list $location
+$nics = get_nics $location
 
 # Initialize variables that we need for building the Terraform tfvars file
 $rg_name = ''
@@ -135,8 +137,25 @@ $subnet_nsg = @{}
 if ( $deploy_method -eq 'new' ) {
     # New deploy, ask user for items that haven't already been specified
     $rg_name = Read-Host "Enter name of resource group (RG) to create"
+    $vnet_name = Read-Host "Enter name of VNet to create"
+    $vnet_addr_space = Read-Host "Enter CIDR block for new VNet"
+    $device_subnet_name = Read-Host "Enter name of subnet to create"
+    $device_subnet_cidr = Read-Host "Enter CIDR block for new subnet"
+    
 } else {
     # Use existing- show user what is in Azure env and let them choose
     ## Here is a list of RGs, VNets, Subnets, resources
 
+    ## Resource group
+    $answer = Get-SelectionFromUser -Options ($rg_list, "Create New Resource Group") -Prompt "Select Resource Group"
+    if ( $answer -eq "Create New Resource Group" ) {
+        $rg_name = Read-Host "Enter name of RG to create"
+    } elseif ( $answer -eq '' ) {
+        Write-Host "Operation Aborted" -ForegroundColor Red
+        exit
+    } else {
+        $rg_name = $answer
+    }
+
+    dprint -Message "RG name is $rg_name" -Color "Magenta"
 }
