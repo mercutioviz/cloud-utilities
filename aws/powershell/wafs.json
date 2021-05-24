@@ -2,46 +2,46 @@
   "Mappings": {
     "amiMapMap": {
       "10.1.1.016": {
-        "mapName": "10.1.1.016"
+        "mapName": "10x1x1x016"
       },
       "10.1.0.015": {
-        "mapName": "10.1.0.015"
+        "mapName": "10x1x0x015"
       },
       "10.0.1.011": {
-        "mapName": "10.0.1.011"
+        "mapName": "10x0x1x011"
       },
       "10.0.1.010": {
-        "mapName": "10.0.1.010"
+        "mapName": "10x0x1x010"
       },
       "10.0.0.020": {
-        "mapName": "10.0.0.020"
+        "mapName": "10x0x0x020"
       },
       "9.2.1.015": {
-        "mapName": "9.2.1.015"
+        "mapName": "9x2x1x015"
       },
       "9.2.0.020": {
-        "mapName": "9.2.0.020"
+        "mapName": "9x2x0x020"
       },
       "9.1.1.016": {
-        "mapName": "9.1.1.016"
+        "mapName": "9x1x1x016"
       },
       "9.1.1.015": {
-        "mapName": "9.1.1.015"
+        "mapName": "9x1x1x015"
       },
       "9.1.0.015": {
-        "mapName": "9.1.0.015"
+        "mapName": "9x1x0x015"
       },
       "9.1.0.003": {
-        "mapName": "9.1.0.003"
+        "mapName": "9x1x0x003"
       },
       "9.0.1.007": {
-        "mapName": "9.0.1.007"
+        "mapName": "9x0x1x007"
       },
       "8.1.1.019": {
-        "mapName": "8.1.1.019"
+        "mapName": "8x1x1x019"
       }
     },
-    "10.1.1.016": {
+    "10x1x1x016": {
       "ap-northeast-1": {
         "BYOL": "ami-0077e528ae43498f5",
         "METERED": "ami-0352b328eec44f914",
@@ -125,7 +125,7 @@
         "PAYG": "ami-07a03990a907dea03"
       }
     },
-    "10.1.0.015": {
+    "10x1x0x015": {
       "ap-northeast-1": {
         "BYOL": "ami-0c440bb70463c761c",
         "METERED": "ami-01ac9145b06a8ca91",
@@ -209,7 +209,7 @@
         "PAYG": "ami-0fcb0e67ba0ebe5dc"
       }
     },
-    "10.0.1.011": {
+    "10x0x1x011": {
       "ap-northeast-1": {
         "BYOL": "ami-040482863065d9111",
         "METERED": "ami-028d2db17aa683910",
@@ -293,7 +293,7 @@
         "PAYG": "ami-02ef020b32e53c12c"
       }
     },
-    "10.0.1.010": {
+    "10x0x1x010": {
       "ap-northeast-1": {
         "BYOL": "ami-039a286d83f298c77",
         "METERED": "ami-0e691094022c9027d",
@@ -377,7 +377,7 @@
         "PAYG": "ami-040e6ac5de95107c1"
       }
     },
-    "10.0.0.020": {
+    "10x0x0x020": {
       "ap-northeast-1": {
         "BYOL": "ami-0c6f81fe8b471f230",
         "PAYG": "ami-040a95c9d83d87fb6"
@@ -446,7 +446,7 @@
         "PAYG": "ami-08b14c8f3443a9ffc"
       }
     },
-    "9.2.1.015": {
+    "9x2x1x015": {
       "ap-northeast-1": {
         "BYOL": "ami-055ecde816c9d0bba",
         "METERED": "ami-0e69db24f2649d394",
@@ -527,7 +527,7 @@
         "PAYG": "ami-0b5f438ddcac1a19e"
       }
     },
-    "9.2.0.020": {
+    "9x2x0x020": {
       "ap-northeast-1": {
         "BYOL": "ami-0ff204c8da53c9298",
         "METERED": "ami-0c7adac522c97e862",
@@ -609,7 +609,7 @@
         "PAYG": "ami-0fb8e1bec0069c8e3"
       }
     },
-    "9.1.1.016": {
+    "9x1x1x016": {
       "ap-northeast-1": {
         "BYOL": "ami-91b3cd7c",
         "METERED": "ami-7897ee95",
@@ -689,7 +689,7 @@
         "PAYG": "ami-91694fe9"
       }
     },
-    "9.1.1.015": {
+    "9x1x1x015": {
       "ap-northeast-1": {
         "BYOL": "ami-d44ba6ab",
         "METERED": "ami-7445a80b",
@@ -766,7 +766,7 @@
         "PAYG": "ami-f542368d"
       }
     },
-    "9.1.0.015": {
+    "9x1x0x015": {
       "ap-northeast-1": {
         "BYOL": "ami-46389020",
         "METERED": "ami-b248ffd4",
@@ -843,7 +843,7 @@
         "PAYG": "ami-edd40095"
       }
     },
-    "9.1.0.003": {
+    "9x1x0x003": {
       "eu-west-1": {
         "BYOL": "ami-4ce10135"
       },
@@ -854,7 +854,7 @@
         "BYOL": "ami-4e828558"
       }
     },
-    "9.0.1.007": {
+    "9x0x1x007": {
       "ap-northeast-1": {
         "BYOL": "ami-2221cf44",
         "METERED": "ami-321ef754",
@@ -930,7 +930,7 @@
         "PAYG": "ami-85d532fd"
       }
     },
-    "8.1.1.019": {
+    "8x1x1x019": {
       "ap-northeast-1": {
         "BYOL": "ami-8ec7e1e9",
         "METERED": "ami-ab95b6cc",
