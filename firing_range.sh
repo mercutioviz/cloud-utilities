@@ -29,4 +29,4 @@ docker run -d -p 5000:3000 bkimminich/juice-shop
 docker run -d -p 6001:8080 eystsen/altoro
 docker run -d -p 7000:80 kennethreitz/httpbin
 docker run -d -p 8000:80 mutzel/all-in-one-hackazon:postinstall supervisord -n
-docker run -d -p 9000:8080 swaggerapi/petstore
+docker run -d -p 9000:8080 swaggerapi/petstore3
