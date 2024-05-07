@@ -10,6 +10,13 @@
 # If first time it will install docker and install the docker containers
 # Subsequent times it will just launch the containers
 #   Perfect for manually starting all the vulnerable apps
+#
+#
+# Docker cleanup info
+#  If /var/lib/docker/overlay2 gets large then run:
+# docker system prune -af
+#
+# See also: https://techkluster.com/docker/optimizing-docker-storage/
 
 #!/bin/bash
 if [ "$EUID" -ne 0 ]
