@@ -28,13 +28,25 @@ apt-get update
 apt-get upgrade -y
 apt install docker.io -y
 
-docker run -d -p 1000:80 vulnerables/web-dvwa
+#docker run -d -p 1000:80 vulnerables/web-dvwa
+
+docker run -d \
+  -p 1000:80 \
+  --name dvwa \
+  --mount type=tmpfs,destination=/var/www/html/hackable/uploads \
+  --mount type=tmpfs,destination=/var/www/html/hackable/logs \
+  --mount type=tmpfs,destination=/var/lib/php/sessions \
+  --mount type=tmpfs,destination=/tmp \
+  vulnerables/web-dvwa
+
 docker run -d -p 2000:80 szsecurity/mutillidae
 docker run -d -p 3000:80 szsecurity/webgoat
 docker run -d -p 4000:80 raesene/bwapp
-docker run -d -p 5000:3000 bkimminich/juice-shop
+docker run -d -p 5000:3000 --name juice-shop --mount type=tmpfs,destination=/data bkimminich/juice-shop
 docker run -d -p 6001:8080 eystsen/altoro
 docker run -d -p 7000:80 kennethreitz/httpbin
-#docker run -d -p 8000:80 mutzel/all-in-one-hackazon:postinstall supervisord -n
-docker run --name hackazon -d -p 8000:80 ianwijaya/hackazon
+#docker run -d -p 8000:80 --name hackazon mutzel/all-in-one-hackazon:postinstall supervisord -n
+
+docker run -d -p 8000:80 --mount type=tmpfs,destination=/var/www/html/uploads ianwijaya/hackazon
+
 docker run -d -p 9000:8080 swaggerapi/petstore3
